@@ -174,8 +174,8 @@ class ASRModel:
         if cfg is None:
             self.cfg['task']['data'] = self.cfg['decoding']['results_path'] = str(self.tmp_dir_path.resolve())
             self.cfg['dataset']['gen_subset'] = f'{lang}:dev'
-            self.cfg['max_tokens'][400000]
-            self.cfg['max_tokens_valid'][400000]
+            self.cfg['dataset']['max_tokens'] = 400000
+            self.cfg['dataset']['max_tokens_valid'] = 400000
             if device is None:
                 if torch.cuda.is_available():
                     device = 'cuda'
